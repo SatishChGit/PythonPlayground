@@ -40,6 +40,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
         python -m pip install pytest-html
+        python -m pip install pytest-html-reporter
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -50,13 +51,15 @@ jobs:
     - name: Test with pytest
       run: |
         cd example-py-pytest;
-        python -m pytest --html=testreport/report.html --self-contained-html  
+        pwd
+        echo ${GITHUB_WORKSPACE}
+        python -m pytest tests/ --html-report=${GITHUB_WORKSPACE}/report/report.html
     - name: Setup Pages
       uses: actions/configure-pages@v3
     - name: Build with Jekyll
       uses: actions/jekyll-build-pages@v1
       with:
-        source: /home/runner/work/PythonPractise/PythonPractise/example-py-pytest/testreport
+        source: ./report
         destination: ./_site
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
