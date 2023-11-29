@@ -50,13 +50,13 @@ jobs:
     - name: Test with pytest
       run: |
         cd example-py-pytest;
-        python -m pytest --html=report.html --self-contained-html  
+        python -m pytest --html=/github/workspace/testreport/report.html --self-contained-html  
     - name: Setup Pages
       uses: actions/configure-pages@v3
     - name: Build with Jekyll
       uses: actions/jekyll-build-pages@v1
       with:
-        source: /home/runner/work/PythonPractise/PythonPractise/example-py-pytest/report.html
+        source: ./testreport/report.html
         destination: ./_site
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
