@@ -50,7 +50,7 @@ jobs:
         cd example-py-pytest;
         pwd
         echo ${GITHUB_WORKSPACE}
-        python -m pytest tests/ --html-report=${GITHUB_WORKSPACE}/report/index.html
+        python -m pytest tests/ --html-report=${GITHUB_WORKSPACE}/report/index.html --archive-count 5
     - name: Setup Pages
       uses: actions/configure-pages@v3
     - name: Build with Jekyll
