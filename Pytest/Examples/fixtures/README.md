@@ -1,0 +1,2 @@
+Fixture is a function that provides a fixed state or a set-up resources needed by python tests. The resources could be anything from simple data structures to complex objects, database, webserver or any other dependencies required by test functions. Fixed state refers to a consistent and predefined condition or setup that remains constant throughout the execution of one or more tests. It ensures that each test starts with the same initial conditions, making the test results predictable and reliable.
+Refer [fixtures.md](..%2F..%2FTutorials%2Ffixtures.md) for more information.
